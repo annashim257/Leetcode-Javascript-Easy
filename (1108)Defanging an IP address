@@ -1,0 +1,11 @@
+/**
+ * @param {string} address
+ * @return {string}
+ */
+var defangIPaddr = function(address) {
+    String.prototype.replaceAll = function(a, b){
+        return this.split(a).join(b);
+    };
+    
+    return address.replaceAll('.', '[.]');
+};
